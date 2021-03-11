@@ -23,6 +23,11 @@ open class GridOptHandler(
         cols = noOfCols,
         isHorizontal = isHorizontal), ViewOptHandler {
 
+    fun refreshDataSet(listSize: Int, unscrolledCount : Int, minLoadCount : Int?) {
+        invalidateAll()
+        refreshVisible(listSize, unscrolledCount, minLoadCount)
+    }
+
     override fun onStableViewPeak(index: Int) {
         //Expected implementation in child
     }
